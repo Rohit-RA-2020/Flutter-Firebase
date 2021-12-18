@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_week4/screens/google_welcome.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_week4/screens/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -34,7 +33,7 @@ class GoogleSignInProvider {
       await FirebaseAuth.instance.signInWithCredential(credential);
 
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => GoogleWelcome(user: user)));
+          MaterialPageRoute(builder: (context) => Welcome(email: user.email)));
     } on FirebaseException catch (e) {
       print(e);
     }

@@ -66,8 +66,7 @@ class Authentication {
         context,
         MaterialPageRoute(
           builder: (context) => Welcome(
-            auth: _auth,
-            user: user,
+            email: user.user!.email!
           ),
         ),
       );
